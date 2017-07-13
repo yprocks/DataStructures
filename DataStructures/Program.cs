@@ -8,10 +8,42 @@ namespace DataStructures
         {
             // TreeTest();
             // HashTest();
-            PriorityQueue();
+            // PriorityQueue();
+            Tries();
             Console.ReadLine();
         }
+
+        static void Tries()
+        {
+            Trie tr = new Trie();
+            tr.Insert("lard");
+            tr.Insert("lamptd");
+            tr.Insert("card");
+            tr.Insert("cartoon");
+            tr.Insert("jard");
+            tr.Insert("mard");
+            tr.Insert("aard");
+            tr.Insert("tard");
+            tr.Insert("gamaprd");
+            tr.Insert("gamdu");
+
+            //tr.Print();
         
+            string word = "card";
+            Console.WriteLine(word + " Present: " + tr.SearchFullWord(word));
+
+            string word2 = "cartoon";
+            Console.WriteLine(word2 + " Present within word: " + tr.SearchPartialWord(word2));
+
+            string toRemove = "card";
+            tr.Delete(toRemove);
+            Console.WriteLine(toRemove + " Removed ");
+
+            Console.WriteLine(toRemove + " Present: " + tr.SearchFullWord(toRemove));
+            
+            Console.WriteLine(word2 + " Present: " + tr.SearchFullWord(word2));
+        }
+
         static void TreeTest()
         {
             BinaryTree<int> btree = new BinaryTree<int>();
