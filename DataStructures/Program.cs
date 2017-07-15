@@ -9,8 +9,24 @@ namespace DataStructures
             // TreeTest();
             // HashTest();
             // PriorityQueue();
-            Tries();
-            Console.ReadLine();
+            // Tries();
+            HashFunctions();
+            //Console.ReadLine();
+        }
+
+        static void HashFunctions()
+        {
+            HashFunction hash = new HashFunction(11);
+            string wordLookup = "a";
+
+            while (!wordLookup.Equals("x", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.Write("Search the word : ");
+                wordLookup = Console.ReadLine();
+                if (wordLookup.Equals("x", StringComparison.CurrentCultureIgnoreCase))
+                    break;
+                Console.WriteLine(hash.Find(wordLookup));
+            }
         }
 
         static void Tries()
@@ -28,7 +44,7 @@ namespace DataStructures
             tr.Insert("gamdu");
 
             //tr.Print();
-        
+
             string word = "card";
             Console.WriteLine(word + " Present: " + tr.SearchFullWord(word));
 
@@ -40,7 +56,7 @@ namespace DataStructures
             Console.WriteLine(toRemove + " Removed ");
 
             Console.WriteLine(toRemove + " Present: " + tr.SearchFullWord(toRemove));
-            
+
             Console.WriteLine(word2 + " Present: " + tr.SearchFullWord(word2));
         }
 
@@ -133,7 +149,7 @@ namespace DataStructures
             Console.WriteLine("\nAfter Dequeue");
             pq.Dequeue();
             pq.PrintQueue();
-            
+
             Console.WriteLine("\nAfter Dequeue");
             pq.Dequeue();
             pq.PrintQueue();
